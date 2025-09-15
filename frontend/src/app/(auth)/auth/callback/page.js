@@ -3,6 +3,7 @@
 import { useEffect } from "react";
 import { useRouter } from "next/navigation";
 import useSendRequest from "@/hooks/useSendRequest";
+import LoadingScreen from "@/components/Loading";
 
 export default function GoogleCallbackPage() {
   const router = useRouter();
@@ -41,12 +42,14 @@ export default function GoogleCallbackPage() {
   }, [router, sendRequest]);
 
   return (
-    <p>
-      {loading
-        ? "Logging you in..."
-        : error
-        ? "Login failed"
-        : "Logging you in..."}
-    </p>
+    <div>
+      {loading ? (
+        <LoadingScreen />
+      ) : error ? (
+        "Login failed"
+      ) : (
+        "Logging you in..."
+      )}
+    </div>
   );
 }
