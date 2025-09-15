@@ -59,7 +59,7 @@ def register(user_create: UserCreate, response: Response, db: Session = Depends(
         httponly=True,
         max_age=settings.REFRESH_TOKEN_EXPIRE_DAYS * 24 * 60 * 60,
         secure=False,  # Set True in production with HTTPS
-        samesite="lax"
+        samesite="none"
     )
 
     return {
@@ -96,7 +96,7 @@ def login(user_login: UserLogin, response: Response, db: Session = Depends(get_d
         httponly=True,
         max_age=settings.REFRESH_TOKEN_EXPIRE_DAYS * 24 * 60 * 60,
         secure=True, # Set True in production with HTTPS
-        samesite="lax"
+        samesite="none"
     )
 
     return {
@@ -174,7 +174,7 @@ def refresh_token(response: Response, request: Request, db: Session = Depends(ge
         httponly=True,
         max_age=settings.REFRESH_TOKEN_EXPIRE_DAYS * 24 * 60 * 60,
         secure=True, # Set True in production with HTTPS
-        samesite="lax"
+        samesite="none"
     )
 
     return {
