@@ -234,7 +234,7 @@ def google_login(google_auth: GoogleAuth, response: Response, db: Session=Depend
         httponly=True,
         max_age=settings.REFRESH_TOKEN_EXPIRE_DAYS * 24 * 60 * 60,
         secure=True,  # Set True in production with HTTPS
-        samesite="lax"
+        samesite="none"
     )
 
     return {
