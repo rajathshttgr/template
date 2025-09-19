@@ -1,8 +1,8 @@
-# Qbot: Ask Questions
+# FullStack Template
 
 ## Project Setup
 
-Follow these steps to clone and set up the Qbot backend project.
+Follow these steps to clone and set up the project.
 
 ---
 
